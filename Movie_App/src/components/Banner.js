@@ -1,28 +1,26 @@
 import React, { Component } from 'react'
 import { Card,Button } from 'react-bootstrap'
-
+import {movies} from './getMovies'
+import img from '../resources/img.jpg'
 export default class Banner extends Component {
   render() {
-    let movie = ''
+    let movie = movies.results[0]
     return (
         <>
         {
             
-            // movie == ''?
-            //     <div className="spinner-border text-primary" role="status">
-            //     <span className="visually-hidden">Loading...</span>
-            //     </div>:
-            <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="..." />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
+            movie.length == 0?
+                <div className="spinner-border text-primary" role="status">
+                <span className="visually-hidden">Loading...</span>
+                </div>:
+            <div className="card banner-card" >
+              <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} class="card-img-top banner-img" alt={movie.title}/>
+              <div className="card-body">
+              <h1 className="card-title banner-title">{movie.original_name}</h1>
+              <p className="card-text banner-text">{movie.overview}</p>
+              {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
+            </div>
+            </div>
         }
       </>
     )
