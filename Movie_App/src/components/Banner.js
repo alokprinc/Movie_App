@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Card,Button } from 'react-bootstrap'
 import {movies} from './getMovies'
-import img from '../resources/img.jpg'
+import axios from 'axios';
+
 export default class Banner extends Component {
   render() {
     let movie = movies.results[0]

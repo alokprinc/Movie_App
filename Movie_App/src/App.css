@@ -43,12 +43,12 @@
   margin-top: 1vh;
   margin-bottom: 3vh;
   position: relative;
-  height: 70vh;
+  height: 80vh;
   color: white;
 }
 
 .banner-img{
-height: 70vh;
+height: 80vh;
 width: 100%;
 }
 
@@ -99,7 +99,12 @@ margin-right: 5vw;
   width: 20vw;
   
 }
-
+.favorite-genres{
+  padding: 2rem;
+}
+.favorites-table{
+  padding: 2rem;
+}
 @media screen and (max-width:400px){
   .banner-card{
     height:30vh;
